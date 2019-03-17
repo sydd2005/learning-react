@@ -7,17 +7,13 @@ var items = [
     "3 cloves of Garlic"
 ];
 
-class IngredientsList extends React.Component {
-    renderListItem(ingredient, i) {
-        return React.createElement("li", {key: i}, ingredient);
-    }
-
-    render() {
+const IngredientsList = (props) => {
         return React.createElement("ul",
             {"className": "ingredients"},
-            this.props.items.map(this.renderListItem)
+            props.items.map((ingredient, i) => 
+                React.createElement("li", {key: i}, ingredient)
+            )
         );
-    }
 }
 
 const list = React.createElement(IngredientsList, {items}, null);
