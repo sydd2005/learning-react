@@ -9,15 +9,17 @@ var items = [
 
 const IngredientsList = React.createClass({
     displayName: "IngredientsList",
+    renderListItem(ingredient, i) {
+        return React.createElement("li", {key: i}, ingredient);
+    },
     render() {
         return React.createElement("ul",
             {"className": "ingredients"},
-            items.map((ingredient, i) =>
-                React.createElement("li", {key: i}, ingredient))
+            this.props.items.map(this.renderListItem)
         );
     }
 });
 
-const list = React.createElement(IngredientsList, null, null);
+const list = React.createElement(IngredientsList, {items}, null);
 
 ReactDOM.render(list, document.querySelector('#react-container'))
