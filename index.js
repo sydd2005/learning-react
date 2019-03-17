@@ -7,12 +7,17 @@ var items = [
     "3 cloves of Garlic"
 ];
 
-var card = React.createElement("div", null,
-    React.createElement("h1", null, "Baked Salmon"),
-    React.createElement("ul", {"className": "ingredients"},
-        items.map((ingredient, i) =>
-            React.createElement("li", {key: i}, ingredient)
-        )
-    )
-);
-ReactDOM.render(card, document.querySelector('#react-container'))
+const IngredientsList = React.createClass({
+    displayName: "IngredientsList",
+    render() {
+        return React.createElement("ul",
+            {"className": "ingredients"},
+            items.map((ingredient, i) =>
+                React.createElement("li", {key: i}, ingredient))
+        );
+    }
+});
+
+const list = React.createElement(IngredientsList, null, null);
+
+ReactDOM.render(list, document.querySelector('#react-container'))
