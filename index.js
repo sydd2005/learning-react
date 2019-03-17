@@ -7,10 +7,10 @@ var items = [
     "3 cloves of Garlic"
 ];
 
-const IngredientsList = (props) => {
+const IngredientsList = ({items}) => {
         return React.createElement("ul",
             {"className": "ingredients"},
-            props.items.map((ingredient, i) => 
+            items.map((ingredient, i) => 
                 React.createElement("li", {key: i}, ingredient)
             )
         );
