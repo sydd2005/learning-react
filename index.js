@@ -7,15 +7,11 @@ var items = [
     "3 cloves of Garlic"
 ];
 
-const IngredientsList = ({items}) => {
-        return React.createElement("ul",
-            {"className": "ingredients"},
-            items.map((ingredient, i) => 
-                React.createElement("li", {key: i}, ingredient)
-            )
-        );
-}
-
-const list = React.createElement(IngredientsList, {items}, null);
+var list = React.DOM.ul(
+    {className: "ingredients"},
+    items.map((ingredient, key) =>
+        React.DOM.li({key}, ingredient)
+    )
+);
 
 ReactDOM.render(list, document.querySelector('#react-container'))
