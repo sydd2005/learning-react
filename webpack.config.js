@@ -1,4 +1,5 @@
 const path = require('path');
+const autoprefixer = require('autoprefixer');
 
 module.exports = {
   entry: "./src/index.js",
@@ -16,6 +17,19 @@ module.exports = {
         query: {
           presets: ['env', 'stage-0', 'react']
         }
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: () => [autoprefixer]
+            }
+          }
+        ]
       }
     ]
   },
