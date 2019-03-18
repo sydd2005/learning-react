@@ -1,7 +1,9 @@
+const path = require('path');
+
 module.exports = {
   entry: "./src/index.js",
   output: {
-    path: "dist/assets",
+    path: path.resolve(__dirname, "dist/assets"),
     filename: "bundle.js"
   },
   module: {
@@ -9,7 +11,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /(node_modules)/,
-        loader: ['babel-loader'],
+        loader: 'babel-loader',
         query: {
           presets: ['env', 'stage-0', 'react']
         }
