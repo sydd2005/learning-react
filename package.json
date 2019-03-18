@@ -9,7 +9,14 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "2.26.3",
-    "gulp": "4.0.0"
+    "babel-core": "6.26.3",
+    "babel-loader": "8.0.5",
+    "babel-preset-env": "1.7.0",
+    "babel-preset-react": "6.24.1",
+    "babel-preset-stage-0": "6.24.1"
+  },
+  "dependencies": {
+    "react": "16.8.4",
+    "react-dom": "16.8.4"
   }
 }
