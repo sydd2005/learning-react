@@ -1,3 +1,4 @@
+import Recipe from './Recipe';
 
 const Menu = ({recipes}) => (
   <article>
