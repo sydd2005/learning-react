@@ -1,16 +1,7 @@
 import {Component} from 'react';
 import PropTypes from 'prop-types';
 
-class Summary extends Component {
-  static propTypes = {
-    ingredients: PropTypes.array,
-    steps: PropTypes.array,
-    title: PropTypes.string,
-  }
-
-  render() {
-    const {ingredients, steps, title} = this.props;
-    return (
+const Summary = ({ingredients, steps, title}) => (
       <div className="summary">
         <h1>{title}</h1>
         <p>
@@ -20,7 +11,11 @@ class Summary extends Component {
         </p>
       </div>
     );
-  }
-}
+
+Summary.propTypes = {
+  ingredients: PropTypes.array,
+  steps: PropTypes.array,
+  title: PropTypes.string,
+};
 
 export default Summary;
