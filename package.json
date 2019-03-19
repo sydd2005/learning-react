@@ -4,6 +4,7 @@
   "description": "none",
   "main": "index.js",
   "scripts": {
+    "start": "webpack && gulp serve",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -24,6 +25,7 @@
     "webpack-cli": "^3.3.0"
   },
   "dependencies": {
+    "prop-types": "15.7.2",
     "react": "16.8.4",
     "react-dom": "16.8.4"
   }
